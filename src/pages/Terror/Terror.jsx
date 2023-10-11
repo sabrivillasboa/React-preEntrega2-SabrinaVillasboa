@@ -1,8 +1,9 @@
 import React from 'react'
+import "./Terror.css"
 
 const Terror = () => {
   return (
-    <div>Terror</div>
+    <h1>Terror</h1>
   )
 }
 

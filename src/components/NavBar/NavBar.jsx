@@ -25,15 +25,15 @@ const drawerWidth = 240;
 const navItems = [
   {
     title: "Home",
-    path: "/",
+    path: "",
   },
   {
     title: "Terror",
-    path: "/terror",
+    path: "terror",
   },
   {
     title: "Romance",
-    path: "/romance",
+    path: "romance",
   }
 ]
 
@@ -90,7 +90,7 @@ const NavBar = (props) => {
           <CartWidget />
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Link key={item} to={`/${item.path}`}>
+              <Link key={item.title} to={`/${item.path}`}>
                 <Button sx={{ color: "#fff", pr: 3, pl: 3 }}>
                   {item.title}
                 </Button>
