@@ -1,5 +1,5 @@
 import React from "react";
-
+//import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
@@ -22,20 +22,20 @@ const primary = deepOrange[400]; // #ff7043
 
 const drawerWidth = 240;
 //const navItems = ["Home", "Terror", "Romance", "Aventuras"];
-const navItems = [
-  {
-    title: "Home",
-    path: "",
-  },
-  {
-    title: "Terror",
-    path: "terror",
-  },
-  {
-    title: "Romance",
-    path: "romance",
-  }
-]
+// const navItems = [
+//   {
+//     title: "Home",
+//     path: "",
+//   },
+//   {
+//     title: "Terror",
+//     path: "terror",
+//   },
+//   {
+//     title: "Romance",
+//     path: "romance",
+//   }
+// ]
 
 const NavBar = (props) => {
   const { window } = props;
@@ -52,7 +52,7 @@ const NavBar = (props) => {
       </Typography>
       <Divider />
       <List>
-        {navItems.map((item) => (
+        {/* {navItems.map((item) => (
           <ListItem key={item.title} disablePadding>
             <Link to={`/${item.path}`}>
               <ListItemButton sx={{ textAlign: "center" }}>
@@ -60,7 +60,28 @@ const NavBar = (props) => {
               </ListItemButton>
             </Link>
           </ListItem>
-        ))}
+        ))} */}
+        <ListItem disablePadding>
+          <Link to={`/`}>
+            <ListItemButton sx={{ textAlign: "center", color: "black"}}>
+              <ListItemText primary="Home" />
+            </ListItemButton>
+          </Link>
+        </ListItem>
+        <ListItem disablePadding>
+          <Link to={`/category/terror`}>
+            <ListItemButton sx={{ textAlign: "center", color: "black" }}>
+              <ListItemText primary="Terror" />
+            </ListItemButton>
+          </Link>
+        </ListItem> 
+        <ListItem disablePadding>
+          <Link to={`/romance`}>
+            <ListItemButton sx={{ textAlign: "center", color: "black" }}>
+              <ListItemText primary="Romance" />
+            </ListItemButton>
+          </Link>
+        </ListItem> 
       </List>
     </Box>
   );
@@ -70,7 +91,7 @@ const NavBar = (props) => {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <AppBar component="nav" position="fixed">
+      <AppBar component="nav" position="sticky">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -89,13 +110,28 @@ const NavBar = (props) => {
           </Typography>
           <CartWidget />
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
+            {/* {navItems.map((item) => (
               <Link key={item.title} to={`/${item.path}`}>
                 <Button sx={{ color: "#fff", pr: 3, pl: 3 }}>
                   {item.title}
                 </Button>
               </Link>
-            ))}
+            ))} */}
+            <Link to="/">
+              <Button sx={{ color: "#fff", pr: 3, pl: 3 }}>
+                Home
+              </Button>
+            </Link>
+            <Link to="/category/terror">
+              <Button sx={{ color: "#fff", pr: 3, pl: 3 }}>
+                Terror
+              </Button>
+            </Link>
+            <Link to="/category/romance">
+              <Button sx={{ color: "#fff", pr: 3, pl: 3 }}>
+                Romance
+              </Button>
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>

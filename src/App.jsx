@@ -2,7 +2,8 @@ import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ItemListContainer from "./pages/ItemListContainer/ItemListContainer";
-import Terror from "./pages/Terror/Terror";
+import ItemDetail from "./pages/ItemDetail/ItemDetail";
+//import Terror from "./pages/Terror/Terror";
 
 const App = () => {
   return (
@@ -10,8 +11,9 @@ const App = () => {
       <header>
         <NavBar/>
         <Routes>
-          <Route path="/" element={<ItemListContainer greeting="Bienvenido!"/>}/>
-          <Route path="/terror" element={<Terror/>}/>
+          <Route path="/" element={<ItemListContainer/>}/>
+          <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
+          <Route path="/item/:id" element={<ItemDetail />} />
         </Routes>
       </header>
     </Router>
