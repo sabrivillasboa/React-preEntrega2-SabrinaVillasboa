@@ -8,11 +8,11 @@ import {
   
   const Item = (props) => {
     return (
-      <Card sx={{ width: 345, m: 2 }}>
+      <Card sx={{ width: 250, m: 2}}>
         <CardActionArea>
-          <CardMedia
+          <CardMedia sx={{ objectFit: "contain" }}
             component="img"
-            height="345"
+            height="300"
             image={props.product.image}
             alt={props.product.name}
           />
