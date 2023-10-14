@@ -23,7 +23,7 @@ const ItemDetail = (props) => {
 
   return (
     <Box sx={{display: "flex", justifyContent: "center"}}>
-      <Item product={item} />
+      <Item product={item} detailedView={true} />
     </Box>
   );
 };
