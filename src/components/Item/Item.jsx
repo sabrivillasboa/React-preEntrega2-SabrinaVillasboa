@@ -22,10 +22,7 @@ import {
             <Typography gutterBottom variant="h5" component="div">
               {product.name}
             </Typography>
-            {/* <Typography variant="body2" color="text.secondary">
-              {props.product.description}
-            </Typography> */}
-            {detailedView && ( // Muestra detalles solo en la vista detallada
+            {detailedView && (
             <>
               <Typography variant="body2" color="text.secondary">
                 Autor: {product.author}
