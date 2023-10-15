@@ -6,13 +6,13 @@ const ItemList = (props) => {
 
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-evenly"}}>
-        {
-            props.products.map( product => 
-              <Link to= {`/item/${product.id}`}>
-                <Item product={product} key={product.id} detailedView={false} />
-              </Link>
-            )
-        }
+      {
+        props.products.map( product => 
+          <Link to= {`/item/${product.id}`}>
+            <Item product={product} key={product.id} detailedView={false} />
+          </Link>
+        )
+      }
     </Box>
   );
 };

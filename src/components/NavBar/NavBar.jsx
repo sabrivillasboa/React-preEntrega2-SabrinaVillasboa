@@ -21,21 +21,7 @@ import { Link } from "react-router-dom";
 const primary = deepOrange[400]; // #ff7043
 
 const drawerWidth = 240;
-//const navItems = ["Home", "Terror", "Romance", "Aventuras"];
-// const navItems = [
-//   {
-//     title: "Home",
-//     path: "",
-//   },
-//   {
-//     title: "Terror",
-//     path: "terror",
-//   },
-//   {
-//     title: "Romance",
-//     path: "romance",
-//   }
-// ]
+
 
 const NavBar = (props) => {
   const { window } = props;
@@ -52,15 +38,6 @@ const NavBar = (props) => {
       </Typography>
       <Divider />
       <List>
-        {/* {navItems.map((item) => (
-          <ListItem key={item.title} disablePadding>
-            <Link to={`/${item.path}`}>
-              <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={item.title} />
-              </ListItemButton>
-            </Link>
-          </ListItem>
-        ))} */}
         <ListItem disablePadding>
           <Link to={`/`}>
             <ListItemButton sx={{ textAlign: "center", color: "black"}}>
@@ -76,9 +53,14 @@ const NavBar = (props) => {
           </Link>
         </ListItem> 
         <ListItem disablePadding>
-          <Link to={`/romance`}>
+          <Link to={`category/romance`}>
             <ListItemButton sx={{ textAlign: "center", color: "black" }}>
               <ListItemText primary="Romance" />
+            </ListItemButton>
+          </Link>
+          <Link to={`category/literatura`}>
+            <ListItemButton sx={{ textAlign: "center", color: "black" }}>
+              <ListItemText primary="Literatura" />
             </ListItemButton>
           </Link>
         </ListItem> 
@@ -106,17 +88,12 @@ const NavBar = (props) => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            <img src="/src/components/NavBar/MYBOOK-white.png" alt="Logo" />
+            <Link to={`/`} >
+              <img src="/src/components/NavBar/MYBOOK-white.png" alt="Logo" />
+            </Link>
           </Typography>
           <CartWidget />
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {/* {navItems.map((item) => (
-              <Link key={item.title} to={`/${item.path}`}>
-                <Button sx={{ color: "#fff", pr: 3, pl: 3 }}>
-                  {item.title}
-                </Button>
-              </Link>
-            ))} */}
             <Link to="/">
               <Button sx={{ color: "#fff", pr: 3, pl: 3 }}>
                 Home
@@ -132,6 +109,11 @@ const NavBar = (props) => {
                 Romance
               </Button>
             </Link>
+            <Link to="/category/literatura">
+              <Button sx={{ color: "#fff", pr: 3, pl: 3 }}>
+                Literatura
+              </Button>
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>
@@ -142,7 +124,7 @@ const NavBar = (props) => {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },

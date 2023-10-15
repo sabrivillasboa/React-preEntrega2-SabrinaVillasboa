@@ -10,7 +10,7 @@ import {
     const { product, detailedView } = props;
     
     return (
-      <Card sx={{ width: 250, m: 2}}>
+      <Card sx={{ width: 300, m: 2}}>
         <CardActionArea>
           <CardMedia sx={{ objectFit: "contain" }}
             component="img"
@@ -19,23 +19,20 @@ import {
             alt={product.name}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h6" component="div" >
               {product.name}
+            </Typography>
+            <Typography variant="body1" color="text.primary">
+              Precio: ${product.price}
             </Typography>
             {detailedView && (
             <>
-              <Typography variant="body2" color="text.secondary">
-                Autor: {product.author}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Categoría: {product.category}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Stock: {product.stock}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Precio: ${product.price}
-              </Typography>
+            <Typography variant="subtitle2" color="text.secondary">
+              Autor: {product.author}
+            </Typography>
+            <Typography variant="subtitle2" color="text.secondary">
+              Sinopsis: {product.description}
+            </Typography>
             </>
             )}
           </CardContent>
